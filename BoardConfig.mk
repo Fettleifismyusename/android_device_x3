@@ -31,10 +31,12 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 TARGET_RECOVERY_PRE_COMMAND := "/system/bin/setup-recovery"
 
-# Try to build the kernel
-TARGET_KERNEL_CONFIG := x3_defconfig
-# Keep this as a fallback
+# Inline build the kernel
+TARGET_KERNEL_CONFIG := cile381_x3_defconfig
 TARGET_PREBUILT_KERNEL := device/lge/p880/kernel
+# Build using linaro
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro
+BUILD_KERNEL := true
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 #BOARD_TOUCH_RECOVERY := true
